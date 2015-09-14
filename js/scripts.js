@@ -1,11 +1,5 @@
-// var arrayLength = function(input) {
-//   var length = input.replace(/\s+/g, '').split('').length;
-//   return length;
-// }
-
-
 var getArray = function(input) {
-  var charArray = input.replace(/\s+/g, '').split('');
+  var charArray = input.replace(/\W+/g, "").split('');
   return charArray;
 }
 
