@@ -1,3 +1,4 @@
 var arraySize = function(input) {
-  return 15;
+  var value = input.split('').length;
+  return value;
 }
