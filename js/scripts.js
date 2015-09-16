@@ -8,10 +8,10 @@ function getMessage(userInput) {
 /*  Finds the square root of the length of the message string and rounds up.
     This is the ideal width of the cryptosquare.                             */
 
-function getColumnAmount(message) {
+function getWidth(message) {
   var messageLength = message.length;
-  var columns = Math.ceil(Math.sqrt(messageLength));
-  return columns;
+  var width = Math.ceil(Math.sqrt(messageLength));
+  return width;
 }
 
 /*  Turns the message into an array of strings, each no longer than the

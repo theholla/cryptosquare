@@ -4,9 +4,9 @@ describe('getMessage', function() {
   })
 })
 
-describe('getColumnAmount', function() {
+describe('getWidth', function() {
   it("gets the number of columns based on the square root", function() {
-    expect(getColumnAmount("itspartytime")).to.equal(4);
+    expect(getWidth("itspartytime")).to.equal(4);
   })
 })
 
