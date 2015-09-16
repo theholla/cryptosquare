@@ -18,12 +18,12 @@ function getColumnAmount(message) {
     column amount                                                           */
 
 function getRows(message, columns) {
-  var x = [];
+  var rows = [];
   for (var i = 0; i < message.length; i ++) {
     if (i % columns == 0 && i != 0)
-    x.push(message.substring(i - columns, i));
+    rows.push(message.substring(i - columns, i));
     if (i == message.length - 1)
-    x.push(message.substring(i - (i % columns), i+1));
+    rows.push(message.substring(i - (i % columns), i+1));
   }
-  return x;
+  return rows;
 }
