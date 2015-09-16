@@ -1,22 +1,29 @@
-function getArray(userInput) {
-  var input = userInput.toLowerCase().replace(/\W+/g, "");
-  return input;
+/*  Transforms user input into a string with no spaces or special characters  */
+
+function getMessage(userInput) {
+  var message = userInput.toLowerCase().replace(/\W+/g, "");
+  return message;
 }
 
-function getCryptoLength(input) {
-  var inputLength = input.length;
-  var squareRoot = Math.sqrt(inputLength);
-  var cryptoLength = Math.ceil(squareRoot);
-  return cryptoLength;
-}
+/*  Finds the square root of the length of the message string and rounds up.
+    This is the ideal width of the cryptosquare.                             */
 
-function makeCryptoArray(input, cryptoLength) {
-  var columns = [];
-  for (var i = 0; i < input.length; i ++) {
-    if (i % cryptoLength == 0 && i != 0)
-    columns.push(input.substring(i - cryptoLength, i));
-    if (i == input.length - 1)
-    columns.push(input.substring(i - (i % cryptoLength), i+1));
-  }
+function getColumnAmount(message) {
+  var messageLength = message.length;
+  var columns = Math.ceil(Math.sqrt(messageLength));
   return columns;
+}
+
+/*  Turns the message into an array of strings, each no longer than the
+    column amount                                                           */
+
+function getRows(message, columns) {
+  var x = [];
+  for (var i = 0; i < message.length; i ++) {
+    if (i % columns == 0 && i != 0)
+    x.push(message.substring(i - columns, i));
+    if (i == message.length - 1)
+    x.push(message.substring(i - (i % columns), i+1));
+  }
+  return x;
 }
